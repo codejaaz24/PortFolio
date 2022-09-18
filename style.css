@@ -1,0 +1,388 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand h1 {
+    font-size: 3rem;
+    color: aquamarine;
+}
+
+.brand h1 span {
+    color: rgb(22, 201, 207);
+}
+
+/*HEADER*/
+#header {
+    position: relative;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 60vh;
+    height: auto;
+    margin-top: 0;
+}
+
+#header .header {
+    min-height: 10vh;
+    background-color: rgba(31, 30, 30, 0.64);
+    position: fixed;
+}
+
+#header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 0%;
+    max-width: 1200px;
+    padding: 0 15px;
+    padding-top: 0%;
+}
+
+#header .list ul {
+    list-style: none;
+    padding-left: -5%;
+    width: 100vh;
+    height: 8vh;
+    border: 3px dotted rgb(131, 4, 250);
+    background-color: rgba(31, 30, 30, 0.64);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+#header .list li {
+    padding: 10px;
+}
+
+#header .list a {
+    font-size: 2rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: red;
+}
+
+#header .list a:hover {
+    color: greenyellow;
+    font-size: xx-large;
+}
+
+/*HOME*/
+#home {
+    background-image: url(bg_img.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#home::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .6;
+    z-index: -1;
+}
+
+#home .home {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#home h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4.5rem;
+    position: relative;
+    color: transparent;
+    animation: txt_revl 2.5s ease forwards;
+    animation-delay: 1s;
+}
+
+#home h1:nth-child(1) {
+    animation-delay: 2.5s;
+}
+
+#home h1:nth-child(2) {
+    animation: txt_revl_syed 2s ease forwards;
+    animation-delay: 3.5s;
+}
+
+#home h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(189, 224, 255);
+    animation: txt_revl_box 2s ease;
+    animation-delay: 1s;
+}
+
+#home h1:nth-child(1) span {
+    animation-delay: 2s;
+}
+
+#home h1:nth-child(2) span {
+    animation-delay: 3s;
+}
+
+/*PORTFOLIO BUTTON*/
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    color: violet;
+    background-color: transparent;
+    border: 2px solid blue;
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    margin-top: 30px;
+    transition: .5s ease-in-out;
+    transition-property: baground-color, color;
+    cursor: grab;
+}
+
+.btn:hover {
+    cursor: grabbing;
+    color: crimson;
+    background-color: blanchedalmond;
+}
+
+/*EDUCATION*/
+
+#education .education {
+    flex-direction: column;
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: .15rem;
+}
+
+#education .edu_top p {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    letter-spacing: .05rem;
+    line-height: 2rem;
+    color: crimson;
+}
+
+#education .edu_bot {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#education .edu_bot .school h2 {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#education .edu_bot .school p {
+    color: rgb(65, 18, 18);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+#education .edu_bot .icon {
+    margin-bottom: 30px;
+}
+
+#education .edu_bot .school img {
+    flex-basis: 50%;
+    margin-left: 3rem;
+    /* height: 300px; */
+    overflow: hidden;
+}
+
+#education .school {
+    display: flex;
+    flex-basis: 80%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    border-radius: 50px;
+    margin: 10px 5%;
+    background-image: url(bgg_img.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+
+/*PROJECT*/
+
+
+#project .pro {
+    flex-direction: column;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+#project .head h1 {
+    margin-bottom: 40px;
+}
+
+#project .each {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#project .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px;
+    border-radius: 15px;
+    border: 2px solid palevioletred;
+    background-image: url(bg3.png);
+}
+
+
+
+#project .info h1 {
+    padding: 20px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    color: cornsilk;
+    font-size: 3rem;
+}
+
+#project .info p {
+    padding: 2%;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/*CONTACT*/
+#contact .contact {
+    flex-direction: row;
+    min-width: 300px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px, 0;
+}
+
+#contact .items {
+    width: 100%;
+}
+
+#contact .each {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 2px double plum;
+}
+
+/*FOOTER*/
+#footer {
+    background-color: gray;
+}
+
+#footer .footer {
+    min-height: 250px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+#footer h2 {
+    color: burlywood;
+    font-size: 1.5rem;
+    padding: 10px;
+    padding-bottom: 15px;
+    font-weight: bolder;
+}
+
+#footer .media {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+#footer .media .items {
+    padding: 15px;
+}
+
+#footer .media .items img {
+    filter: grayscale(1.5);
+}
+
+#footer .media .items :hover img {
+    filter: grayscale(0);
+}
+
+#footer p {
+    font-size: 1.5rem;
+}
+
+/*ANIMATIONS*/
+@keyframes txt_revl_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes txt_revl {
+    100% {
+        color: white;
+    }
+}
+
+@keyframes txt_revl_syed {
+    100% {
+        color: red;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bolder;
+    }
+}
