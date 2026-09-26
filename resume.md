@@ -1,6 +1,6 @@
 # Syed Mohideen Afridi
 **Chennai, Tamil Nadu, India** | [**+91 63698 91971**](callto:+916369891971) | [**syedafridi0024@gmail.com**](mailto:syedafridi0024@gmail.com)  
-[LinkedIn](https://www.linkedin.com/in/syed-afridi-5a4868245) | [GitHub](https://github.com/codejaaz24) | [LeetCode](https://leetcode.com/u/codejaaz24/) | [HackerRank](https://www.hackerrank.com/profile/syedafridi2002)
+[LinkedIn](https://www.linkedin.com/in/syed-afridi-5a4868245) | [GitHub](https://github.com/codejaaz24) | [Portfolio](https://codejaaz24.github.io/PortFolio/) | [LeetCode](https://leetcode.com/u/codejaaz24/) | [HackerRank](https://www.hackerrank.com/profile/syedafridi2002)
 
 ---
 
