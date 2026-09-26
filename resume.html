@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Mohideen Afridi - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      background-color: #f1f5f9;
+      line-height: 1.33;
+      font-size: 8.95pt;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      padding: 9.5mm 15mm 8.5mm 15mm;
+      margin: 12px auto;
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        page-break-inside: avoid;
+        height: 297mm;
+        max-height: 297mm;
+        overflow: hidden;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    /* Links styling */
+    a {
+      color: #0f172a;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    .clickable-title {
+      color: #0f172a;
+      text-decoration: none;
+      border-bottom: 1px dotted #94a3b8;
+    }
+
+    .clickable-title:hover {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+
+    .cert-badge {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #2563eb;
+      margin-left: 3px;
+      text-decoration: none;
+    }
+
+    .cert-badge:hover {
+      text-decoration: underline;
+    }
+
+    /* Header styling */
+    .header {
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .name {
+      font-size: 19.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+      margin-bottom: 2.5px;
+    }
+
+    .contact-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 8.9pt;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .separator {
+      color: #94a3b8;
+    }
+
+    /* Section Bar */
+    .section-title {
+      background-color: #e5e7eb;
+      border-radius: 4px;
+      padding: 2.6px 8px;
+      font-size: 9.6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #0f172a;
+      margin-top: 5.5px;
+      margin-bottom: 3.5px;
+    }
+
+    #page-2 .section-title {
+      margin-top: 6px;
+      margin-bottom: 3.5px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 8.6pt;
+      color: #334155;
+      line-height: 1.36;
+      text-align: justify;
+      margin-bottom: 2px;
+    }
+
+    .summary-text strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .summary-text em {
+      color: #1e293b;
+      font-style: italic;
+    }
+
+    /* Experience & Projects items */
+    .item-block {
+      margin-bottom: 4px;
+    }
+
+    #page-2 .item-block {
+      margin-bottom: 4.5px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5px;
+    }
+
+    .item-left {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .org-name {
+      font-size: 9.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .role-title {
+      font-size: 8.95pt;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .role-sub {
+      font-size: 8.2pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .project-tech {
+      font-size: 8.1pt;
+      color: #475569;
+      font-weight: 500;
+      margin-top: 0.5px;
+      margin-bottom: 1.5px;
+    }
+
+    .item-date {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #334155;
+      white-space: nowrap;
+    }
+
+    /* Bullet points */
+    ul.bullet-list {
+      list-style-type: disc;
+      padding-left: 14px;
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
+
+    ul.bullet-list li {
+      font-size: 8.5pt;
+      color: #334155;
+      line-height: 1.31;
+      margin-bottom: 1.8px;
+      text-align: justify;
+    }
+
+    #page-2 ul.bullet-list li {
+      line-height: 1.31;
+      margin-bottom: 1.6px;
+    }
+
+    ul.bullet-list li strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Skills Container */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 142px 1fr;
+      font-size: 8.4pt;
+      line-height: 1.32;
+      align-items: baseline;
+    }
+
+    .skill-category {
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      font-size: 8pt;
+      letter-spacing: 0.3px;
+    }
+
+    .skill-items {
+      color: #334155;
+    }
+
+    /* Two column grid for Certs & Achievements */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5px 16px;
+      margin-top: 1.5px;
+      font-size: 8.4pt;
+    }
+
+    .grid-item {
+      color: #334155;
+      line-height: 1.3;
+      padding-left: 11px;
+      position: relative;
+    }
+
+    .grid-item::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #475569;
+      font-weight: bold;
+    }
+
+    .grid-item strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Education specifics */
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    /* Footer links */
+    .footer-bar {
+      margin-top: auto;
+      padding-top: 5px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      font-size: 8.5pt;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #334155;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .footer-link:hover {
+      color: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .footer-img {
+      height: 17px;
+      width: auto;
+      object-fit: contain;
+      vertical-align: middle;
+    }
+
+    /* Web Preview Controls */
+    .preview-controls {
+      max-width: 210mm;
+      margin: 15px auto 5px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 16px;
+      background: #1e293b;
+      color: #f8fafc;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .btn-print {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 9pt;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease;
+    }
+
+    .btn-print:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-controls no-print">
+    <div><strong>Syed Mohideen Afridi</strong> — Production ATS Resume (2 Pages Exact)</div>
+    <button class="btn-print" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <div class="page" id="page-1">
+    
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="name">Syed Mohideen Afridi</h1>
+      <div class="contact-bar">
+        <span>Chennai, Tamil Nadu, India</span>
+        <span class="separator">|</span>
+        <a href="callto:+916369891971">+91 63698 91971</a>
+        <span class="separator">|</span>
+        <a href="mailto:syedafridi0024@gmail.com">syedafridi0024@gmail.com</a>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section>
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">
+        Results-driven <strong>Software Engineer</strong> with <strong>3+ years of experience</strong> building scalable web platforms, resilient microservices, and intelligent workflow automation systems. Proven track record in taking <strong>end-to-end task ownership</strong> in agile environments, collaborating closely with engineering leadership and cross-functional teams to streamline workflows and drive technical innovation. Core background spans <em>full-stack development</em> with <strong>React.js, Django, and Node.js</strong>, engineering <em>embeddable AI chatbot SDKs</em>, implementing application-side <em>Multi-Factor Authentication (MFA)</em>, and developing <em>poly-cloud integration utilities</em> to ensure cross-cloud portability. Hands-on in supporting containerized deployment workflows with <strong>Docker, Helm, and ArgoCD</strong>. Extensively leverages <em>AI-assisted development tools</em> as a pragmatic engineering aid to accelerate delivery velocity, optimize code paths, and deliver maintainable, production-ready software.
+      </p>
+    </section>
+
+    <!-- TECHNICAL SKILLS (Java (Basics) and Kafka (Basics) not bold, OCI removed) -->
+    <section>
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-container">
+        <div class="skill-row">
+          <span class="skill-category">Languages</span>
+          <span class="skill-items">JavaScript (ES6+), Python, Java (Basics), C++, SQL, Bash/Shell</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Frontend Stack</span>
+          <span class="skill-items">React.js, Next.js, Redux, Redux Toolkit, React Flow, Konva.js, Chart.js, HTML5, CSS3, SCSS, WebSockets</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Backend &amp; APIs</span>
+          <span class="skill-items">Django, Django REST Framework, Node.js, Express.js, FastAPI, RESTful APIs, Apache Kafka (Basics)</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">AI &amp; Automation</span>
+          <span class="skill-items">Embedded Chatbot SDK &amp; CDN Script, AI Agents, LLM Integrations, AI-Assisted Development, Intelligent Document Processing (IDP)</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Cloud &amp; DevOps</span>
+          <span class="skill-items">Kubernetes, Helm Charts, ArgoCD, Docker, Poly-Cloud Utilities, Config Repositories, CI/CD, Linux</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Security &amp; Auth</span>
+          <span class="skill-items">Multi-Factor Authentication (MFA), Vulnerability Remediation (Cyraax Scans), HSTS, Scoped Cookies, CORS &amp; CSRF</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Databases &amp; Tools</span>
+          <span class="skill-items">PostgreSQL, MySQL, Redis, Pandas, Git, GitHub Actions, Jira, Postman, Vite, Webpack</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE (PART 1) -->
+    <section>
+      <div class="section-title">Work Experience</div>
+
+      <!-- M2P FINTECH -->
+      <div class="item-block">
+        <div class="item-header">
+          <div class="item-left">
+            <span class="org-name">M2P Fintech</span>
+            <span class="separator">|</span>
+            <span class="role-title">Software Development Engineer I (SDE-1)</span>
+          </div>
+          <span class="item-date">Mar 2025 – Present</span>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Application-Side MFA Planning &amp; Integration:</strong> Proposed and implemented a structured plan for the application-side Multi-Factor Authentication (MFA) feature on the web portal, collaborating closely with the platform team to integrate platform authentication specs smoothly.</li>
+          <li><strong>Embedded AI Chatbot SDK &amp; CDN:</strong> Developed an interactive AI Chatbot packaged as an embeddable JavaScript SDK, CDN script, and standalone web application; successfully integrated the widget across internal and partner web pages, including the company's official website.</li>
+          <li><strong>Poly-Cloud &amp; Cloud-Agnostic Utilities:</strong> Engineered application-side wrappers and integration utilities for poly-cloud infrastructure, extending cross-cloud portability and enabling seamless multi-cloud operational support.</li>
+          <li><strong>Client Deployments &amp; Release Support:</strong> Managed end-to-end production deployments for dedicated enterprise client accounts, ensuring smooth release transitions, configuration verification, and reliable uptime.</li>
+          <li><strong>DevOps Support &amp; ArgoCD:</strong> Authored and maintained Kubernetes Helm charts and multi-environment configuration repositories, managing continuous deployment workflows via <strong>ArgoCD</strong>.</li>
+          <li><strong>Security Scans &amp; Compliance Fixes:</strong> Addressed and resolved multiple frontend and backend vulnerabilities identified through Cyraax security scans (including HSTS headers, scoped cookie attributes, and CORS policies), assisting the organization in achieving necessary safety standard certificates.</li>
+          <li><strong>Task Ownership &amp; Peer Support:</strong> Self-managed daily deliverables working directly under an Associate Director in a fast-paced environment; assisted peers with codebase walkthroughs and architectural context to facilitate smooth team onboarding.</li>
+          <li><strong>AI-Assisted Engineering:</strong> Actively involving and adapting AI-assisted development workflows to accelerate delivery velocity, keep up with current industry trends, optimize code paths, and build reliable production-grade software.</li>
+        </ul>
+      </div>
+
+      <!-- MAD STREET DEN (TRAINEE) -->
+      <div class="item-block">
+        <div class="item-header">
+          <div class="item-left">
+            <span class="org-name">Mad Street Den (Vue.ai)</span>
+            <span class="separator">|</span>
+            <span class="role-title">Software Engineering Trainee</span>
+          </div>
+          <span class="item-date">July 2024 – Feb 2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Intelligent Document Processing (IDP):</strong> Contributed to IDP automation features, working on document classification, annotation workflows, and data extraction pipelines for various document formats.</li>
+          <li><strong>UI &amp; Accessibility Improvements:</strong> Enhanced UI usability with keyboard navigation, custom scrolling, and shortcut features, significantly improving user workflow efficiency and reducing task turnaround times from <strong>1 hour to 10 minutes</strong>.</li>
+          <li><strong>Interactive Workflow Builder:</strong> Improved the workflow orchestration module using <strong>React Flow</strong>, <strong>Konva.js</strong>, and drag-and-drop components; contributed to the dataset profiling module displaying summaries with <strong>Chart.js</strong>.</li>
+          <li><strong>Backend Optimization &amp; Notifications:</strong> Optimized data processing in Django using <strong>Pandas</strong>, reducing backend memory usage; implemented a reliable notification system to keep users informed on long-running tasks.</li>
+          <li><strong>Sandbox Isolation Support:</strong> Assisted in isolating code-server environments so instances spin up on targeted page access, helping reduce unnecessary cloud infrastructure usage.</li>
+          <li><strong>Agile Leadership &amp; Scrum Facilitation:</strong> Led multiple Scrum ceremonies and sprint syncs in the absence of a dedicated Scrum Master, demonstrating leadership and cross-functional facilitation to keep deliverables on schedule.</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- ==================== PAGE 2 ==================== -->
+  <div class="page" id="page-2">
+
+    <!-- WORK EXPERIENCE CONTINUATION (Without "Contd" banner) -->
+    <div style="margin-top: 1px;">
+      
+      <!-- MAD STREET DEN (INTERN) WITH CLICKABLE CERTIFICATE -->
+      <div class="item-block">
+        <div class="item-header">
+          <div class="item-left">
+            <span class="org-name">Mad Street Den (Vue.ai)</span>
+            <span class="separator">|</span>
+            <a href="https://drive.google.com/file/d/1WquhocGQyn2RsbBk_FN29adwrq1MNt2r/view?usp=drivesdk" target="_blank" class="role-title clickable-title">Software Engineering Intern <span class="cert-badge">[View Certificate ↗]</span></a>
+          </div>
+          <span class="item-date">Dec 2023 – June 2024</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Contributed to building new modules within an existing AI-based web application, enabling eCommerce personalisation and recommendation strategies.</li>
+          <li><strong>Webpage Performance Optimization:</strong> Profiled rendering lifecycles and improved webpage loading times through asset optimization, code splitting, and memoization under senior engineers' guidance and help—demonstrating fast learning ability and quick adaptation to complex tasks early in career.</li>
+          <li><strong>Bug Resolution &amp; War Rooms:</strong> Actively contributed to high-priority debugging sessions, diagnosing root causes and delivering tested fixes for production edge cases.</li>
+        </ul>
+      </div>
+
+      <!-- TWOWAITS TECHNOLOGIES WITH CLICKABLE CERTIFICATE -->
+      <div class="item-block">
+        <div class="item-header">
+          <div class="item-left">
+            <span class="org-name">Twowaits Technologies Pvt. Ltd.</span>
+            <span class="separator">|</span>
+            <a href="https://drive.google.com/file/d/1WotNd1E1_-sOCmH2pbjWh-JUPwzJcaJG/view?usp=drivesdk" target="_blank" class="role-title clickable-title">Tathastu DSA Scholar Intern <span class="cert-badge">[View Certificate ↗]</span></a>
+          </div>
+          <span class="item-date">Aug 2022</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Created quiz modules and structured notes on fundamental Data Structures &amp; Algorithms (Arrays, Linked Lists, Trees, Graphs).</li>
+          <li>Solved diverse algorithmic problems to build strong problem-solving and algorithmic fundamentals.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROJECTS (Title: Projects, Tech Stack Below Title, IPL Added) -->
+    <section>
+      <div class="section-title">Projects</div>
+
+      <!-- PROJECT 1: SUCCOUR TO FARMERS -->
+      <div class="item-block">
+        <div class="item-header">
+          <div class="item-left">
+            <a href="https://drive.google.com/file/d/1CZT9Qju0u9bh4rnwqS2JpyjE9ogaHBQp/view?usp=sharing" target="_blank" class="org-name clickable-title">SUCCOUR TO FARMERS – Smart Farming Platform <span class="cert-badge">[Project Overview ↗]</span></a>
+          </div>
+        </div>
+        <div class="project-tech">Technologies: React.js, Node.js, Express, Twilio API, MongoDB</div>
+        <ul class="bullet-list">
+          <li>Developed a smart farming platform providing farmers with insights on soil quality, weather conditions, and automated irrigation schedules.</li>
+          <li>Integrated automated Twilio SMS alert notifications and built a direct produce marketplace to connect farmers directly with buyers.</li>
+        </ul>
+      </div>
+
+      <!-- PROJECT 2: DOCINE -->
+      <div class="item-block">
+        <div class="item-header">
+          <div class="item-left">
+            <span class="org-name">DOCINE – Healthcare Application</span>
+          </div>
+        </div>
+        <div class="project-tech">Technologies: Python, Django, React.js, Scikit-learn, PostgreSQL, REST APIs</div>
+        <ul class="bullet-list">
+          <li>Built a healthcare web application utilizing ML algorithms for early disease detection and symptom analysis with high accuracy.</li>
+          <li>Implemented clean role-based dashboards for doctors and patients, displaying medical history, prevention insights, and hospital details.</li>
+        </ul>
+      </div>
+
+      <!-- PROJECT 3: SIMPLE CHAT APP -->
+      <div class="item-block">
+        <div class="item-header">
+          <div class="item-left">
+            <a href="https://chat-app-one-sable.vercel.app/" target="_blank" class="org-name clickable-title">SIMPLE CHAT APP – Real-Time Messaging Platform <span class="cert-badge">[Live App ↗]</span></a>
+          </div>
+        </div>
+        <div class="project-tech">Technologies: React.js, Node.js, WebSockets, Express</div>
+        <ul class="bullet-list">
+          <li>Built a real-time messaging application using React, Node.js, and WebSockets, enabling live Room-ID group chats and low-latency message broadcasting.</li>
+        </ul>
+      </div>
+
+      <!-- PROJECT 4: IPL STATS APP -->
+      <div class="item-block">
+        <div class="item-header">
+          <div class="item-left">
+            <a href="https://ipl-blush.vercel.app/" target="_blank" class="org-name clickable-title">IPL Stats App – Interactive Cricket Dashboard <span class="cert-badge">[Live App ↗]</span></a>
+          </div>
+        </div>
+        <div class="project-tech">Technologies: React.js, JavaScript, CSS3, REST APIs</div>
+        <ul class="bullet-list">
+          <li>Built an IPL clone application using React, displaying team profiles, player statistics, and interactive match insight cards.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION (With Degree Certificate Embed Link & Unbolded IoT / Blockchain) -->
+    <section>
+      <div class="section-title">Education</div>
+      <div class="item-block">
+        <div class="edu-header">
+          <div class="item-left">
+            <span class="org-name">Sri Venkateswara College of Engineering (SVCE)</span>
+            <span class="separator">|</span>
+            <a href="https://drive.google.com/file/d/1yXUnmAUA-3Dv5QBdlSKlMl93A5tKJJZt/view?usp=drive_link" target="_blank" class="role-title clickable-title">B.Tech in Information Technology <span class="cert-badge">[View Degree Certificate ↗]</span></a>
+          </div>
+          <span class="item-date">June 2020 – May 2024</span>
+        </div>
+        <div style="font-size: 8.6pt; color: #1e293b; margin-top: 1px; margin-bottom: 2px;">
+          <strong>CGPA: 9.03 / 10.00</strong> (First Class with Distinction)
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Database Systems (DBMS), Operating Systems, Computer Networks, Cloud Computing, Internet of Things (IoT), Blockchain Technologies.</li>
+          <li>Mentored fellow students in programming concepts and full-stack development; organized technical problem-solving sessions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS (Problem Solving Advanced -> Problem Solving) -->
+    <section>
+      <div class="section-title">Certifications</div>
+      <div class="two-col-grid">
+        <div class="grid-item">
+          <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL23CS49S1334439004300922" target="_blank"><strong>Programming in Java:</strong> NPTEL <span class="cert-badge">[Verify ↗]</span></a>
+        </div>
+        <div class="grid-item">
+          <a href="https://www.udemy.com/certificate/UC-8c921369-3f1f-416f-bf68-1635f5fabcb4/" target="_blank"><strong>JavaScript: The Weird Parts:</strong> Udemy <span class="cert-badge">[Verify ↗]</span></a>
+        </div>
+        <div class="grid-item">
+          <a href="https://www.hackerrank.com/certificates/823325819cb1" target="_blank"><strong>Problem Solving:</strong> HackerRank <span class="cert-badge">[Verify ↗]</span></a>
+        </div>
+        <div class="grid-item">
+          <strong>Machine Learning Onramp:</strong> MathWorks
+        </div>
+        <div class="grid-item">
+          <strong>Responsive Web Design:</strong> freeCodeCamp
+        </div>
+        <div class="grid-item">
+          <strong>Cloud &amp; Container Fundamentals:</strong> Hands-On Learning
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS & ACTIVITIES -->
+    <section>
+      <div class="section-title">Achievements &amp; Activities</div>
+      <div class="two-col-grid">
+        <div class="grid-item"><strong>Winner:</strong> 24-Hour Hackathon (CSI, SVCE)</div>
+        <div class="grid-item"><strong>Winner:</strong> Rota-TechX 2023 (24-Hour Hack &amp; Make-a-thon)</div>
+        <div class="grid-item"><strong>1st Place:</strong> Tech-Twisters (St. Joseph's College of Engg.)</div>
+        <div class="grid-item"><strong>Runner-Up:</strong> INTERROGATE, CYNAPSE (RMK Engg.)</div>
+        <div class="grid-item"><strong>Association of Information Technologists (AIT):</strong> Event participant and peer mentor</div>
+        <div class="grid-item"><strong>National Service Scheme (NSS):</strong> Engaged in community service activities</div>
+      </div>
+    </section>
+
+    <!-- FOOTER WITH AUTHENTIC EXTRACTED ICONS FROM SAMPLE RESUME -->
+    <footer class="footer-bar">
+      <a class="footer-link" href="https://www.linkedin.com/in/syed-afridi-5a4868245" target="_blank" title="LinkedIn">
+        <img class="footer-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAEKklEQVR4nLWYXYhWZRDHf++7r5+hEdKuKKVLaoah5boalEKmEnQR2K3hTZQlQmCLl1F4F1EpauWN99JFF+FHF0p+XEhZ0U27m5p2YUGZWdCuu+6Jkf8s43hefc+7OXA458wzz3/mmWdmnjkHWqeaLu7VnFqLMnXgRuB1A88Ai4DZwFRgCPgVGABOAD8H+Q5gDCiYANXDcxewDRgERoE/gMvAL8BF3e39isYHJN/ZBK8Sdeg+CdgB/KWVHQReBZ4EZqQ59r4ceE1yheb1AY2EW9mQx4BvBboPeOQO21i25Sb/ieafBRZXNcgF1wV39yTljSYGuGGNNLZC2zsCPNeqQS6wVqs5CkwTb4quKvteC5iGc0i46+9mUD1szYgm5rGopApFpUeE71t22+IcvKEYGVC6+tgUBfHHwOMTNGiatuybENS1MsEdcmNPMM5oj1bzp4AearaqFg3qlZ6+xB+3qktpaFlziwDwD/ABMFcgG0pkqhr0KXA11KFaNGabFHn6xlK+T2Nm1AXgYfEny3sNKfGAje+ZnLdAmFsT/yYNqlDdNiDaDLwtD070fPL3z4B+Ukx063pP7x2qMU47Fbh2Pu0G3tKqLJZmiX8MOCWj5wA/AQfEy+T4XwIvAvN0pNykl3XWWIk3yoH5r7bolIx4Wpc9H9fcQofld8BpGWO8/SWecfwenWWbSCu/HM6aWppsq3hTz6bgKV1+Cr8AnAFWpXlbJbM34fp9pvS+Gy3sksK/JViUuPaBBObPlmFfyLuvyzs/AM9rG/vE7xFuxL8mvbOjMVODQLMMaNaP2BbeB3yu/f9Qi7IKvgb4CPgd2JhS23UXXmA9gIeCEVUbICuErwCPAk8A3wvXTul3gGeBYQVpXOxYeB+K1v0mgBnBla1SoewZlSHTw7N1gpQkRYyZSeoQxwX6df4sSMJVyLG8JDTC6jM5/kIVzv4IcFJWrkzATnfzVgzKeM/ZQ8Lvld4TkWkl/nzoM26UKBtOxsXYGm5i7FgJXi14b73q0SU3xkF2AS/pbCqSd0Z1Ui8JK/PxJRrLC/B2YWZo0NwY36KN0jvO98FOnaLWs+QT+cfgjUJN9/LEMxkUkEbvp3F7J/RJ+5WJDyYjxxX3aeKKxO+W8mXAUgXdZD0v09j85JVZ4i/V3d6dVkrP9pKF39LpWX0YDK5tp2e5E1nqnwO+bqUHtt50RL0qwfUeJzGWIq/Zl0JdXnSyJv96qEH1Kl8H08NYO9/ajmk4h4W7Lulr6btpRKnX28Z3EylGzskja1s1JBu0WF18oZ7VK3SZAWVeW6isKRQjiyb6idtQll0VqLWKW5QhVkMi3S/+FskVSt/tAa/thKiH5041S/0qglfCX4hLJX8hrO68EepIxvvf/s/MA1aH/zNWBqyvMWOsLHzlJV5k3iir0G3TPf9z9R/vTPjrm1hG2QAAAABJRU5ErkJggg==" alt="LinkedIn">
+        <span>LinkedIn</span>
+      </a>
+      <span class="separator">•</span>
+      <a class="footer-link" href="https://github.com/codejaaz24" target="_blank" title="GitHub">
+        <img class="footer-img" src="data:image/png;base64,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" alt="GitHub">
+        <span>GitHub</span>
+      </a>
+      <span class="separator">•</span>
+      <a class="footer-link" href="https://leetcode.com/u/codejaaz24/" target="_blank" title="LeetCode">
+        <img class="footer-img" src="data:image/png;base64,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" alt="LeetCode">
+        <span>LeetCode</span>
+      </a>
+      <span class="separator">•</span>
+      <a class="footer-link" href="https://www.hackerrank.com/profile/syedafridi2002" target="_blank" title="HackerRank">
+        <img class="footer-img" src="data:image/png;base64,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" alt="HackerRank">
+        <span>HackerRank</span>
+      </a>
+    </footer>
+
+  </div>
+
+</body>
+</html>
