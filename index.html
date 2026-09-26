@@ -2064,8 +2064,7 @@
 
             <!-- Dynamic Keyboard Typewriter Name & Roles -->
             <h1 class="hero-name" style="margin-top: 14px;">
-              This is...<br>
-              <span class="gradient-text" id="typewriterText">Syed Mohideen Afridi</span><span
+              <span class="gradient-text" id="typewriterText">This is Syed</span><span
                 class="typewriter-cursor">|</span>
             </h1>
           </div>
@@ -3019,17 +3018,17 @@
     // ----------------------------------------------------
     const typewriterElement = document.getElementById('typewriterText');
     const phrases = [
-      "Syed Mohideen Afridi",
-      "a Software Developer",
-      "an AI Agent Builder",
-      "a Full Stack Architect",
-      "#codejaaz • #24"
+      "This is Syed",
+      "I am a Software Development Engineer",
+      "I am an AI Agent Builder",
+      "I am a Full Stack Architect",
+      "also known as codejaaz #24"
     ];
 
     let phraseIndex = 0;
     let charIndex = phrases[0].length;
     let isDeleting = false;
-    let typingSpeed = 85;
+    let typingSpeed = 120;
 
     function runTypewriter() {
       const currentPhrase = phrases[phraseIndex];
@@ -3037,20 +3036,20 @@
       if (isDeleting) {
         charIndex--;
         typewriterElement.textContent = currentPhrase.substring(0, charIndex);
-        typingSpeed = 40;
+        typingSpeed = 50;
       } else {
         charIndex++;
         typewriterElement.textContent = currentPhrase.substring(0, charIndex);
-        typingSpeed = 85;
+        typingSpeed = 120;
       }
 
       if (!isDeleting && charIndex === currentPhrase.length) {
         isDeleting = true;
-        typingSpeed = 1900;
+        typingSpeed = 2400; // Generous pause so readers easily digest the phrase
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
-        typingSpeed = 350;
+        typingSpeed = 450; // Smooth pause before typing next phrase
       }
 
       setTimeout(runTypewriter, typingSpeed);
@@ -3059,7 +3058,7 @@
     setTimeout(() => {
       isDeleting = true;
       runTypewriter();
-    }, 1800);
+    }, 2400);
 
     // ----------------------------------------------------
     // 4. TIC-TAC-TOE MINI-GAME (#codejaaz vs AI)
